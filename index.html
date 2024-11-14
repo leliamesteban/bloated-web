@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift calculator</title>
+</head>
+<body>
+    <h1>Your 5/3/1 routine</h1>
+    <form action="post">
+        <fieldset>
+            <label for="overhead-press-weight">Overhead Press </label>
+            <input type="number" name="overhead-press-reps" id="overhead-press-reps" min="0" max="1000" placholder="Enter weight..." oninput="updateOverheadPress()" required>
+            <label for="overhead-press-reps"> reps at </label>
+            <input type="number" name="overhead-press-weight" id="overhead-press-weight" min="0" max="1000" placholder="Enter reps..." oninput="updateOverheadPress()" required>
+            kgs
+        </fieldset>
+
+        <fieldset>
+            <label for="deadlift-weight">Deadlift </label>
+            <input type="number" name="deadlift-reps" id="deadlift-reps" min="0" max="1000" placholder="Enter weight..." oninput="updateDeadlift()" required>
+            <label for="deadlift-reps"> reps at </label>
+            <input type="number" name="deadlift-weight" id="deadlift-weight" min="0" max="1000" placholder="Enter reps..." oninput="updateDeadlift()" required>
+            kgs
+        </fieldset>
+
+        <fieldset>
+            <label for="bench-press-weight">Bench Press </label>
+            <input type="number" name="bench-press-reps" id="bench-press-reps" min="0" max="1000" placholder="Enter weight..." oninput="updateBenchPress()" required>
+            <label for="bench-press-reps"> reps at </label>
+            <input type="number" name="bench-press-weight" id="bench-press-weight" min="0" max="1000" placholder="Enter reps..." oninput="updateBenchPress()" required>
+            kgs
+        </fieldset>
+        
+        <fieldset>
+            <label for="squat-weight">Squat </label>
+            <input type="number" name="squat-reps" id="squat-reps" min="0" max="1000" placholder="Enter weight..." oninput="updateSquat()" required>
+            <label for="squat-reps"> reps at </label>
+            <input type="number" name="squat-weight" id="squat-weight" min="0" max="1000" placholder="Enter reps..." oninput="updateSquat()" required>
+            kgs
+        </fieldset>
+    </form>
+
+    <p>Overhead Press 1RM : <span id="overhead-press-1rm"></span></p>
+    <p>Deadlift 1RM : <span id="deadlift-1rm"></span></p>
+    <p>Bench Press 1RM : <span id="bench-press-1rm"></span></p>
+    <p>Squat 1RM : <span id="squat-1rm"></span></p>
+
+    <h2>Your 4 Week Schedule</h2>
+    <h3>Week 1</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Overhead Press</th>
+                <th>Deadlift</th>
+                <th>Bench Press</th>
+                <th>Squat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="week1_set1_overhead_press"></span> kgs x 5</td>
+                <td><span id="week1_set1_deadlift"></span> kgs x 5</td>
+                <td><span id="week1_set1_bench_press"></span> kgs x 5</td>
+                <td><span id="week1_set1_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week1_set2_overhead_press"></span> kgs x 5</td>
+                <td><span id="week1_set2_deadlift"></span> kgs x 5</td>
+                <td><span id="week1_set2_bench_press"></span> kgs x 5</td>
+                <td><span id="week1_set2_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week1_set3_overhead_press"></span> kgs x AMRAP</td>
+                <td><span id="week1_set3_deadlift"></span> kgs x AMRAP</td>
+                <td><span id="week1_set3_bench_press"></span> kgs x AMRAP</td>
+                <td><span id="week1_set3_squat"></span> kgs x AMRAP</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Week 2</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Overhead Press</th>
+                <th>Deadlift</th>
+                <th>Bench Press</th>
+                <th>Squat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="week2_set1_overhead_press"></span> kgs x 5</td>
+                <td><span id="week2_set1_deadlift"></span> kgs x 5</td>
+                <td><span id="week2_set1_bench_press"></span> kgs x 5</td>
+                <td><span id="week2_set1_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week2_set2_overhead_press"></span> kgs x 5</td>
+                <td><span id="week2_set2_deadlift"></span> kgs x 5</td>
+                <td><span id="week2_set2_bench_press"></span> kgs x 5</td>
+                <td><span id="week2_set2_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week2_set3_overhead_press"></span> kgs x AMRAP</td>
+                <td><span id="week2_set3_deadlift"></span> kgs x AMRAP</td>
+                <td><span id="week2_set3_bench_press"></span> kgs x AMRAP</td>
+                <td><span id="week2_set3_squat"></span> kgs x AMRAP</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Week 3</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Overhead Press</th>
+                <th>Deadlift</th>
+                <th>Bench Press</th>
+                <th>Squat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="week3_set1_overhead_press"></span> kgs x 5</td>
+                <td><span id="week3_set1_deadlift"></span> kgs x 5</td>
+                <td><span id="week3_set1_bench_press"></span> kgs x 5</td>
+                <td><span id="week3_set1_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week3_set2_overhead_press"></span> kgs x 5</td>
+                <td><span id="week3_set2_deadlift"></span> kgs x 5</td>
+                <td><span id="week3_set2_bench_press"></span> kgs x 5</td>
+                <td><span id="week3_set2_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week3_set3_overhead_press"></span> kgs x AMRAP</td>
+                <td><span id="week3_set3_deadlift"></span> kgs x AMRAP</td>
+                <td><span id="week3_set3_bench_press"></span> kgs x AMRAP</td>
+                <td><span id="week3_set3_squat"></span> kgs x AMRAP</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Week 4 - Deload</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Overhead Press</th>
+                <th>Deadlift</th>
+                <th>Bench Press</th>
+                <th>Squat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="week4_set1_overhead_press"></span> kgs x 5</td>
+                <td><span id="week4_set1_deadlift"></span> kgs x 5</td>
+                <td><span id="week4_set1_bench_press"></span> kgs x 5</td>
+                <td><span id="week4_set1_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week4_set2_overhead_press"></span> kgs x 5</td>
+                <td><span id="week4_set2_deadlift"></span> kgs x 5</td>
+                <td><span id="week4_set2_bench_press"></span> kgs x 5</td>
+                <td><span id="week4_set2_squat"></span> kgs x 5</td>
+            </tr>
+            <tr>
+                <td><span id="week4_set3_overhead_press"></span> kgs x 5</td>
+                <td><span id="week4_set3_deadlift"></span> kgs x 5</td>
+                <td><span id="week4_set3_bench_press"></span> kgs x 5</td>
+                <td><span id="week4_set3_squat"></span> kgs x 5</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
