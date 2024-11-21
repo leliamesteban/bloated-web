@@ -14,6 +14,8 @@ The problem is a simple Workout Generator that calculates 1 rep max and is based
 
 See [ROADMAP.md](ROADMAP.md)
 
+# Similar projects
+
 # Contributing
 
 # Getting started
