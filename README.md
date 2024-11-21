@@ -1,6 +1,8 @@
-# Vision
+# Three Five One Static Webapp
 
-[screenshot.jpg]()
+![screenshot.png](screenshot.png)
+
+# Vision
 
 Using technology is easy. Solving problems with technology is extremely hard.
 
